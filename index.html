@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset utf="8">
+    <title>coffeerun</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <style>
+     form :focus:required:invalid{
+       border-color: #a94442;
+     }
+    </style>
+
+</head>
+
+<body class="container">
+    <header>
+        <h1>CoffeeRun</h1>
+    </header>
+    <section>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form data-coffee-order="form">
+                    <div class="form-group">
+                        <label for="coffeeOrder">Coffee Order</label>
+                        <input class="form-control" name="coffee" id="coffeeOrder" autofocus required pattern="[a-zA-Z\s]+">
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInput">Email</label>
+                        <input class="form-control" type="email" name="emailAddress" id="emailInput" value="" placeholder="dr@who.com" required />
+                    </div>
+                    <div class="radio">
+                        <label>
+                  <input type="radio" name="size" value="short">Short
+                </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                  <input type="radio" name="size" value="tall" checked>Tall
+                </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                  <input type="radio" name="size" value="grande">Grande
+                </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                  <input type="radio" name="size" value="venti">Venti
+                </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="flavorShot">Flavor Shot</label>
+                        <select id="flavorShot" class="form-control" name="flavor">
+                  <option value="none">None</option>
+                  <option value="caramel">Caramel</option>
+                  <option value="almond">Almond</option>
+                  <option value="mocha">Mocha</option>
+                </select>
+                    </div>
+                    <!--Code for modal Gold Challenge-->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Power Up Option!</h4>
+                    </div>
+                    <div class="modal-body" style="text-align:center;">
+                      <p>Power Up Activated!</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                    <!--End code for modal challenge-->
+                    <div id="slider" class="form-group">
+                        <label for="strengthLevel">Caffeine Rating</label>
+                        <div class="range-slider">
+                            <input type="range" name="strength" class="range-slider__range" value="" min="0" max="100">
+                            <span class="range-slider__value">30</span>
+                        </div>
+                        <!--<input name="strength" type="range" value="30" min="0" max="100">-->
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="reset" class="btn btn-default">Reset</button>
+                </form>
+            </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h4>Pending Orders:</h4>
+            <div data-coffee-order="checklist">
+            </div>
+          </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="scripts/validation.js" charset="utf-8"></script>
+    <script src="scripts/checklist.js" charset="utf-8"></script>
+    <script src="scripts/formhandler.js" charset="utf-8"></script>
+    <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+    <script src="scripts/datastore.js" charset="utf-8"></script>
+    <script src="scripts/truck.js" charset="utf-8"></script>
+    <script src="scripts/main.js" charset="utf-8"></script>
+</body>
+
+</html>
